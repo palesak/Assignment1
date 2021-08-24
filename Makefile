@@ -11,11 +11,11 @@ BINDIR=bin
 $(BINDIR)/%.class:$(SRCDIR)/%.java
 	$(JAVAC) -d $(BINDIR)/ -cp $(BINDIR) $<
 
-CLASSES= PCP.class
+CLASSES= SumArray.class SumAll.class
 CLASS_FILES=$(CLASSES:%.class=$(BINDIR)/%.class)
 
 default: $(CLASS_FILES)
 clean:
 	rm $(BINDIR)/*.class
 run: $(CLASS_FILES)
-	java -cp $(BINDIR) PCP
+	java -cp $(BINDIR) ForkJoinSum/SumAll
